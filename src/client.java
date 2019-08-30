@@ -106,15 +106,8 @@ public class client extends Application {
             while (a!=0) {
                 a--;
 
-                //(new Thread(new Picturerunnable(sendimage,webcam,imageid))).start();
-               /* imageinput = sendimage.sendimage(webcam);
-                imageid.setImage(imageinput);*/
-                new Thread(new Runnable(){
-                    public void run(){
-                       ImageInput imaginput = new SendImage.sendimage(webcam);
-                        imageid.setImage(imageinput);
-                    }
-                }).start();
+                (new Thread(new Picturerunnable(sendimage,webcam,imageid))).start();
+
                 Thread.sleep(50);
                 System.out.println(a+" ");
 
